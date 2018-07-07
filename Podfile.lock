@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.7.2)
+  - RxSwift (4.2.0)
+  - vfrReader (2.8.6)
+
+DEPENDENCIES:
+  - Alamofire (= 4.7.2)
+  - RxSwift (= 4.2.0)
+  - vfrReader (= 2.8.6)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - RxSwift
+    - vfrReader
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  vfrReader: 94ea739a545e39093c93802ca1c5b203a5df46b1
+
+PODFILE CHECKSUM: 68ed12ad76bbc674f3461e29310a9ad9fe2f52e5
+
+COCOAPODS: 1.5.3
