@@ -10,6 +10,7 @@
 		1A41C9B205717BF1EF4C8277 /* Pods_MyTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503D36A55D8097B38A00D750 /* Pods_MyTestTests.framework */; };
 		272C071124C76CF20548DD89 /* Pods_MyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F3814EE5A7B3146ED0EB27 /* Pods_MyTest.framework */; };
 		4814B72DC9EBE836FF689E22 /* Pods_MyTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A826A02DF64171E57D02013 /* Pods_MyTestUITests.framework */; };
+		5955447720F0AAAD00ADC4D5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955447620F0AAAD00ADC4D5 /* Router.swift */; };
 		59D5243220E68C0600C9A25A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D5243120E68C0600C9A25A /* AppDelegate.swift */; };
 		59D5243420E68C0700C9A25A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D5243320E68C0600C9A25A /* ViewController.swift */; };
 		59D5243720E68C0700C9A25A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59D5243520E68C0700C9A25A /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		2A826A02DF64171E57D02013 /* Pods_MyTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B342163FEB61A50E7FCEE7 /* Pods-MyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTest/Pods-MyTest.debug.xcconfig"; sourceTree = "<group>"; };
 		503D36A55D8097B38A00D750 /* Pods_MyTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5955447620F0AAAD00ADC4D5 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		59D5242E20E68C0600C9A25A /* MyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D5243120E68C0600C9A25A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59D5243320E68C0600C9A25A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				59D5243820E68C0700C9A25A /* Assets.xcassets */,
 				59D5243A20E68C0700C9A25A /* LaunchScreen.storyboard */,
 				59D5243D20E68C0700C9A25A /* Info.plist */,
+				5955447620F0AAAD00ADC4D5 /* Router.swift */,
 			);
 			path = MyTest;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59D5243420E68C0700C9A25A /* ViewController.swift in Sources */,
+				5955447720F0AAAD00ADC4D5 /* Router.swift in Sources */,
 				59D5243220E68C0600C9A25A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

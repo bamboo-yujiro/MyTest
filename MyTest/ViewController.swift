@@ -17,19 +17,22 @@ class ViewController: UIViewController, ReaderViewControllerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        let urlString: String = "http://www.pdf995.com/samples/pdf.pdf"
-        let destination = DownloadRequest.suggestedDownloadDestination()
-        Alamofire.download(urlString, to: destination).validate().responseData { response in
-            debugPrint(response)
-            guard
-                let pdfPath = response.destinationURL?.path,
-                let document = ReaderDocument(filePath: pdfPath, password: nil),
-                let readerVC = ReaderViewController(readerDocument: document) else {
-                return
+        Alamofire.request(Router.articles)
+            .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+                print("Progress: \(progress.fractionCompleted)")
             }
-            readerVC.delegate = self
-            readerVC.modalPresentationStyle = .fullScreen
-            self.present(readerVC, animated: false, completion: nil)
+            .validate { request, response, data in
+                // Custom evaluation closure now includes data (allows you to parse data to dig out error messages if necessary)
+                return .success
+            }
+            .responseJSON { response in
+                debugPrint(response)
+                switch response.result {
+                case .success:
+                    print("Success!")
+                case .failure:
+                    print("Failure!")
+                }
         }
     }
 
