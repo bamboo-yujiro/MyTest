@@ -8,10 +8,11 @@
 
 import UIKit
 import Alamofire
-import vfrReader
+import RxSwift
 
-class ViewController: UIViewController, ReaderViewControllerDelegate {
+class ViewController: UIViewController {
 
+/*
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,6 +36,45 @@ class ViewController: UIViewController, ReaderViewControllerDelegate {
                 case .failure:
                     print("Failure!")
                 }
+        }
+    }
+ */
+
+    private let disposeBag = DisposeBag()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        print("View Did Load")
+
+
+        self.getArticles().subscribe(onSuccess: {value in
+            print(value)
+        }, onError: { error in
+            print(error)
+        }).disposed(by: self.disposeBag)
+    }
+
+    private func getArticles() -> Single<Bool> {
+        var urlRequest = URLRequest(url: URL(string: "http://localhost:3000/articles")!)
+        urlRequest.httpMethod = HTTPMethod.get.rawValue
+
+        return Single.create { subscriber in
+            Alamofire.request(Router.articles)
+                .validate { request, response, data in
+                    // Custom evaluation closure now includes data (allows you to parse data to dig out error messages if necessary)
+                    return .success
+                }
+                .responseJSON { response in
+                    //debugPrint(response)
+                    switch response.result {
+                    case .success:
+                        return subscriber(.success(true))
+                    case .failure(let error):
+                        return subscriber(.error(error))
+                    }
+                }
+            return Disposables.create()
         }
     }
 
