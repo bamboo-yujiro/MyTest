@@ -48,18 +48,17 @@ class ViewController: UIViewController {
         print("View Did Load")
 
 
-        self.getArticles().subscribe(onSuccess: {value in
-            print(value)
+        self.getArticles().subscribe(onCompleted: {
         }, onError: { error in
             print(error)
         }).disposed(by: self.disposeBag)
     }
 
-    private func getArticles() -> Single<Bool> {
+    private func getArticles() -> Completable {
         var urlRequest = URLRequest(url: URL(string: "http://localhost:3000/articles")!)
         urlRequest.httpMethod = HTTPMethod.get.rawValue
 
-        return Single.create { subscriber in
+        return Completable.create { subscriber in
             Alamofire.request(Router.articles)
                 .validate { request, response, data in
                     // Custom evaluation closure now includes data (allows you to parse data to dig out error messages if necessary)
@@ -69,7 +68,7 @@ class ViewController: UIViewController {
                     //debugPrint(response)
                     switch response.result {
                     case .success:
-                        return subscriber(.success(true))
+                        return subscriber(.completed)
                     case .failure(let error):
                         return subscriber(.error(error))
                     }
