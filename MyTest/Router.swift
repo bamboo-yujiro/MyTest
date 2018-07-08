@@ -8,35 +8,13 @@
 
 import Alamofire
 
-enum Router: URLRequestConvertible {
+class Router {
 
     static let baseURL = "http://localhost:3000"
 
-    case articles
-
-    var method: Alamofire.HTTPMethod {
-        switch self {
-        case .articles:
-            return .get
-        }
+    static var articles: URLRequest {
+        var urlRequest = URLRequest(url: URL(string: "\(Router.baseURL)/articles")!)
+        urlRequest.httpMethod = HTTPMethod.get.rawValue
+        return urlRequest
     }
-
-    var path: String {
-        switch self {
-        case .articles:
-            return "/articles"
-        }
-    }
-
-    func asURLRequest() throws -> URLRequest {
-        let url = URL(string: Router.baseURL)!
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        urlRequest.httpMethod = method.rawValue
-
-        switch self {
-        case .articles:
-            return try Alamofire.JSONEncoding.default.encode(urlRequest)
-        }
-    }
-
 }

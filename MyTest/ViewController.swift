@@ -16,6 +16,8 @@ class ViewController: UIViewController, ReaderViewControllerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        var urlRequest = URLRequest(url: URL(string: "http://localhost:3000")!)
+        urlRequest.httpMethod = HTTPMethod.get.rawValue
         
         Alamofire.request(Router.articles)
             .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
