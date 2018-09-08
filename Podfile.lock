@@ -1,24 +1,37 @@
 PODS:
   - Alamofire (4.7.2)
+  - Mockingjay (2.0.1):
+    - Mockingjay/Core (= 2.0.1)
+    - Mockingjay/XCTest (= 2.0.1)
+  - Mockingjay/Core (2.0.1):
+    - URITemplate (~> 2.0)
+  - Mockingjay/XCTest (2.0.1):
+    - Mockingjay/Core
   - RxSwift (4.2.0)
+  - URITemplate (2.0.3)
   - vfrReader (2.8.6)
 
 DEPENDENCIES:
   - Alamofire (= 4.7.2)
+  - Mockingjay (= 2.0.1)
   - RxSwift (= 4.2.0)
   - vfrReader (= 2.8.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Mockingjay
     - RxSwift
+    - URITemplate
     - vfrReader
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
   vfrReader: 94ea739a545e39093c93802ca1c5b203a5df46b1
 
-PODFILE CHECKSUM: 68ed12ad76bbc674f3461e29310a9ad9fe2f52e5
+PODFILE CHECKSUM: 8dfd01b1cf6fbdf5d57674fc6966902edc213833
 
 COCOAPODS: 1.5.3

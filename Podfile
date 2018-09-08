@@ -15,6 +15,7 @@ target 'MyTest' do
     # Pods for testing
     pod 'Alamofire', '4.7.2'
     pod 'RxSwift', '4.2.0'
+    pod 'Mockingjay', '2.0.1'
   end
 
   target 'MyTestUITests' do
