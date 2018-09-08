@@ -8,6 +8,7 @@
 
 import XCTest
 import RxSwift
+import Mockingjay
 @testable import MyTest
 
 class MyTestTests: XCTestCase {
@@ -27,6 +28,11 @@ class MyTestTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let data: [String: String] = [
+            "result" : "OKOK"
+        ]
+        stub(http(.get, uri: "/articles"), json(data))
+        
         let infraSampleForTest = InfraSampleForTest()
         let observable = infraSampleForTest.getArticles()
         var result: Int = 0
